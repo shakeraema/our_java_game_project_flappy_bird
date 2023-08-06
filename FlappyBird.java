@@ -28,14 +28,6 @@ public class FlappyBird implements ActionListener, KeyListener {
     private boolean paused;
 
     public void go() {
-
-    }
-    public static void main(String[] args) {
-        new FlappyBird().go();
-    }
-
-
-    public int getScore() {
          frame = new JFrame("Flappy Bird");
         bird = new Bird();
         rects = new ArrayList<Rectangle>();
@@ -51,6 +43,16 @@ public class FlappyBird implements ActionListener, KeyListener {
         
         t = new Timer(1000/FPS, this);
         t.start();
+        
+
+    }
+    public static void main(String[] args) {
+        new FlappyBird().go();
+    }
+
+
+    public int getScore() {
+         return time;
         
     }
 
