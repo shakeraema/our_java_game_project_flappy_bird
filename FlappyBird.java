@@ -49,32 +49,7 @@ public class FlappyBird implements ActionListener, KeyListener {
     public static void main(String[] args) {
         new FlappyBird().go();
     }
-
-
-    public int getScore() {
-         return time;
-        
-    }
-
-    public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode()==KeyEvent.VK_UP) {
-            bird.jump();
-        }
-        else if(e.getKeyCode()==KeyEvent.VK_SPACE) {
-            paused = false;
-        }
-    }
-    public void keyReleased(KeyEvent e) {
-
-    }
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    public boolean paused() {
-        return paused;
-    }
-    @Override
+     @Override
     public void actionPerformed(ActionEvent e) {
         panel.repaint();
         if(!paused) {
@@ -118,6 +93,32 @@ public class FlappyBird implements ActionListener, KeyListener {
             
         }
     }
+
+
+    public int getScore() {
+         return time;
+        
+    }
+
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode()==KeyEvent.VK_UP) {
+            bird.jump();
+        }
+        else if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+            paused = false;
+        }
+    }
+    public void keyReleased(KeyEvent e) {
+
+    }
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    public boolean paused() {
+        return paused;
+    }
+  
 
 
 }
