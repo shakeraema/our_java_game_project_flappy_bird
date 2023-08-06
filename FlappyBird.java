@@ -36,7 +36,22 @@ public class FlappyBird implements ActionListener, KeyListener {
 
 
     public int getScore() {
-        return time;
+         frame = new JFrame("Flappy Bird");
+        bird = new Bird();
+        rects = new ArrayList<Rectangle>();
+        panel = new GamePanel(this, bird, rects);
+        frame.add(panel);
+        
+        frame.setSize(WIDTH, HEIGHT);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.addKeyListener(this);
+        
+        paused = true;
+        
+        t = new Timer(1000/FPS, this);
+        t.start();
+        
     }
 
     public void keyPressed(KeyEvent e) {
